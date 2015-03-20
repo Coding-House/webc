@@ -3,6 +3,9 @@
   <head>
     <!-- 1. Load platform support before any code that touches the DOM. -->
     <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <link rel="import" href="bower_components/core-ajax/core-ajax.html">
+
     <!-- 2. Load the component using an HTML Import -->
     <link rel="import" href="github-cards.html">
     <style>
@@ -20,6 +23,14 @@
 
       <button type="submit">Add</button>
     </form>
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script>
+      $("form").on("submit", function() {
+        $("github-cards")[0].cards.push($("#new-user-name").val());
+        return false;
+      });
+    </script>
 
   </body>
 </html>
