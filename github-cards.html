@@ -1,0 +1,16 @@
+<link rel="import" href="github-card.html">
+
+<polymer-element name="github-cards">
+  <template>
+    <template repeat="{{card in cards}}">
+    <github-card username="{{card}}"></github-card>
+    </template>
+  </template>
+  <script>
+    Polymer('github-cards', {
+      ready: function() {
+        this.cards = [];
+      }
+    });
+  </script>
+</polymer-element>
